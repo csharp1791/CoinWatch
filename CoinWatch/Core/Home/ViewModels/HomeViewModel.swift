@@ -31,7 +31,10 @@ class HomeViewModel: ObservableObject {
       }
       
       guard let data = data else { return }
-      print("Data: \(data)")
+      let dataAsString = String(data: data, encoding: .utf8)
+      if let dataAsString = dataAsString {
+        print("Data:\(dataAsString)")
+      }
       
     }.resume()
   }
