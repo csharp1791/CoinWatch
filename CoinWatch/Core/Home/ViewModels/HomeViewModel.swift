@@ -8,8 +8,10 @@
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
-  
-  
+
+  @Published var coins = [Coin]()
+  @Published var topMovingCoins = [Coin]()
+
   init() {
     fetchCoinData()
   }
@@ -31,11 +33,28 @@ class HomeViewModel: ObservableObject {
       }
       
       guard let data = data else { return }
-      let dataAsString = String(data: data, encoding: .utf8)
-      if let dataAsString = dataAsString {
-        print("Data:\(dataAsString)")
-      }
       
+      do {
+        let coins = try JSONDecoder().decode([Coin].self, from: data)
+        
+        DispatchQueue.main.async {
+          self.coins = coins
+          self.configureTopMovingCoins()
+          
+          print("*** DEBUG Coin: \(self.coins)")
+        }
+        
+        
+      } catch let error {
+        print("DEBUG failed to decode \(error)")
+      }
+     
     }.resume()
+  }
+  
+  func configureTopMovingCoins() {
+    
+    let topMovers = coins.sorted(by: { $0.priceChangePercentage24H > $1.priceChangePercentage24H })
+    self.topMovingCoins = Array(topMovers.prefix(5))
   }
 }

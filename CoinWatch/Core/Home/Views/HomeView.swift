@@ -16,20 +16,20 @@ struct HomeView: View {
       ScrollView(.vertical, showsIndicators: false) {
         
         // top movers view
-        TopMoversView()
+        TopMoversView(viewModel: viewModel)
         
         Divider()
         
         // all coins view
-        AllCoinsView()
+        AllCoinsView(viewModel: viewModel)
       }
       .navigationTitle("Live Prices")
     }
   }
 }
-
+/*
 struct HomeView_Previews: PreviewProvider {
   static var previews: some View {
     HomeView()
   }
-}
+}*/
