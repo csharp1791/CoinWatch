@@ -38,6 +38,7 @@ struct CoinRowView: View {
             .font(.caption)
             .padding(.leading, 6)
         }
+        .foregroundColor(Color.theme.primaryTextColor)
         .padding(.leading, 2)
         
         Spacer()
@@ -48,6 +49,7 @@ struct CoinRowView: View {
             .font(.subheadline)
             .fontWeight(.semibold)
             .padding(.leading, 4)
+            .foregroundColor(Color.theme.primaryTextColor)
           
           Text(coin.priceChangePercentage24H.toPercentString())
             .font(.caption)
