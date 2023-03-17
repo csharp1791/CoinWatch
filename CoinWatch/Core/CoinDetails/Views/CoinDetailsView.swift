@@ -8,21 +8,30 @@
 import SwiftUI
 
 struct CoinDetailsView: View {
+  
+  let viewModel: CoinDetailsViewModel
+  
+  init(coin: Coin) {
+    self.viewModel = CoinDetailsViewModel(coin: coin)
+  }
+  
     var body: some View {
       NavigationView() {
         ScrollView {
           
           // chart
+          ChartView(viewModel: viewModel)
+            .frame(height: 250)
+            .padding(.vertical)
           
           // overview
-          CoinDetailsSection()
+          CoinDetailsSection(model: viewModel.overviewSectionModel)
             .padding(.vertical)
           
           // additonal details
-          CoinDetailsSection()
+          CoinDetailsSection(model: viewModel.additionalDetailsSectionModel)
             .padding(.vertical)
 
-          Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         }
         .navigationTitle("Bitcoin")
         .padding()
@@ -32,6 +41,6 @@ struct CoinDetailsView: View {
 
 struct CoinDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        CoinDetailsView()
+      CoinDetailsView(coin: dev.coin)
     }
 }
