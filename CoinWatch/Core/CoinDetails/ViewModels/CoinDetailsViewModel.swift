@@ -28,7 +28,7 @@ class CoinDetailsViewModel {
     let priceStats = StatisticModel(title: "Current Price", value: price, percentageChange: pricePercentageChange)
     
     // market cap stats
-    let marketCap = coin.marketCap
+    let marketCap = coin.marketCap ?? 0.0
     let marketCapPercentChange = coin.marketCapChangePercentage24H
     let marketCapStat = StatisticModel(title: "Market Capitalization", value: "\(marketCap)", percentageChange: marketCapPercentChange)
     
@@ -37,7 +37,7 @@ class CoinDetailsViewModel {
     let rankStat = StatisticModel(title: "Rank", value: "\(rank)", percentageChange:  nil)
     
     // volume stats
-    let volume = coin.totalVolume
+    let volume = coin.totalVolume ?? 0.0
     let volumeStat = StatisticModel(title: "Volume", value: "\(volume)", percentageChange: nil)
     
     return CoinDetailSectionModel(title: "Overview", stats: [priceStats, marketCapStat, rankStat, volumeStat])
