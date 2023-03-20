@@ -42,9 +42,7 @@ class HomeViewModel: ObservableObject {
         DispatchQueue.main.async {
           self.coins = coins
           self.configureTopMovingCoins()
-          self.isLoadingData = false
-          
-          print("*** DEBUG Coin: \(self.coins)")
+          self.isLoadingData = false          
         }
         
         
