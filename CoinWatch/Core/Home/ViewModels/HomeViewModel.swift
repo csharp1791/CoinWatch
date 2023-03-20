@@ -11,6 +11,7 @@ class HomeViewModel: ObservableObject {
 
   @Published var coins = [Coin]()
   @Published var topMovingCoins = [Coin]()
+  @Published var isLoadingData = true
 
   init() {
     fetchCoinData()
@@ -25,6 +26,7 @@ class HomeViewModel: ObservableObject {
     URLSession.shared.dataTask(with: url) { data, response, error in
       if let error = error {
         print(error.localizedDescription)
+        self.isLoadingData = false
         return
       }
       
@@ -40,6 +42,7 @@ class HomeViewModel: ObservableObject {
         DispatchQueue.main.async {
           self.coins = coins
           self.configureTopMovingCoins()
+          self.isLoadingData = false
           
           print("*** DEBUG Coin: \(self.coins)")
         }
@@ -47,6 +50,7 @@ class HomeViewModel: ObservableObject {
         
       } catch let error {
         print("DEBUG failed to decode \(error)")
+        self.isLoadingData = false
       }
      
     }.resume()

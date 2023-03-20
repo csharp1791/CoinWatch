@@ -27,6 +27,7 @@
 		53C6D07229C385760023DE94 /* StatisticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C6D07129C385760023DE94 /* StatisticModel.swift */; };
 		53C6D07429C387020023DE94 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C6D07329C387020023DE94 /* PreviewProvider.swift */; };
 		53C6D07629C390C40023DE94 /* CoinDetailSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C6D07529C390C40023DE94 /* CoinDetailSectionModel.swift */; };
+		53D384EE29C8AC3B00900D3C /* CustomLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D384ED29C8AC3B00900D3C /* CustomLoadingIndicator.swift */; };
 		53F6C18329C4D26D00FD73E9 /* CoinDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F6C18229C4D26D00FD73E9 /* CoinDetailsViewModel.swift */; };
 		53F6C18529C4E4C300FD73E9 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F6C18429C4E4C300FD73E9 /* ChartData.swift */; };
 		53F6C18729C5084100FD73E9 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F6C18629C5084100FD73E9 /* Date.swift */; };
@@ -53,6 +54,7 @@
 		53C6D07129C385760023DE94 /* StatisticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticModel.swift; sourceTree = "<group>"; };
 		53C6D07329C387020023DE94 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		53C6D07529C390C40023DE94 /* CoinDetailSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailSectionModel.swift; sourceTree = "<group>"; };
+		53D384ED29C8AC3B00900D3C /* CustomLoadingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingIndicator.swift; sourceTree = "<group>"; };
 		53F6C18229C4D26D00FD73E9 /* CoinDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailsViewModel.swift; sourceTree = "<group>"; };
 		53F6C18429C4E4C300FD73E9 /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
 		53F6C18629C5084100FD73E9 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		53AC2D2029BCFE9F0012AEE6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				53D384ED29C8AC3B00900D3C /* CustomLoadingIndicator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				53AC2D2D29BD0D930012AEE6 /* CoinRowView.swift in Sources */,
 				53AC2D2529BCFFBE0012AEE6 /* HomeView.swift in Sources */,
 				5394A30529C26182009944CC /* Color.swift in Sources */,
+				53D384EE29C8AC3B00900D3C /* CustomLoadingIndicator.swift in Sources */,
 				53F6C18929C50CFB00FD73E9 /* ChartView.swift in Sources */,
 				5394A30329C25CD0009944CC /* CoinDetailsView.swift in Sources */,
 				53F6C18529C4E4C300FD73E9 /* ChartData.swift in Sources */,

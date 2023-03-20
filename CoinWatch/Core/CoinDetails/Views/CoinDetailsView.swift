@@ -15,28 +15,28 @@ struct CoinDetailsView: View {
     self.viewModel = CoinDetailsViewModel(coin: coin)
   }
   
-    var body: some View {
-      NavigationView() {
-        ScrollView {
-          
-          // chart
-          ChartView(viewModel: viewModel)
-            .frame(height: 250)
-            .padding(.vertical)
-          
-          // overview
-          CoinDetailsSection(model: viewModel.overviewSectionModel)
-            .padding(.vertical)
-          
-          // additonal details
-          CoinDetailsSection(model: viewModel.additionalDetailsSectionModel)
-            .padding(.vertical)
-
-        }
-        .navigationTitle("Bitcoin")
-        .padding()
-      }
+  var body: some View {
+    ScrollView(showsIndicators: false) {
+      
+      // chart
+      ChartView(viewModel: viewModel)
+        .frame(height: 250)
+        .padding(.vertical)
+        .shadow(color: viewModel.chartLineColor, radius: 10)
+        .shadow(color: viewModel.chartLineColor.opacity(0.5), radius: 10)
+      
+      // overview
+      CoinDetailsSection(model: viewModel.overviewSectionModel)
+        .padding(.vertical)
+      
+      // additonal details
+      CoinDetailsSection(model: viewModel.additionalDetailsSectionModel)
+        .padding(.vertical)
+      
     }
+    .navigationTitle(viewModel.coinName)
+    .padding()
+  }
 }
 
 struct CoinDetailsView_Previews: PreviewProvider {

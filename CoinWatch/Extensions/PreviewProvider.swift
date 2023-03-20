@@ -28,7 +28,7 @@ class DeveloperPreview {
                                             stats: [StatisticModel(title: "Current Price", value: "$21,543.00", percentageChange: 1.23),
                                                     StatisticModel(title: "Market Capitalization", value: "$2413.15n", percentageChange: 1.23),
                                                     StatisticModel(title: "Rank", value: "1", percentageChange: nil),
-                                                    StatisticModel(title: "Rank", value: "1", percentageChange: nil)
+                                                    StatisticModel(title: "Volume", value: "39.99Bn", percentageChange: nil)
                                                    ])
   
   let coin = Coin(
@@ -38,8 +38,8 @@ class DeveloperPreview {
     image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579",
     currentPrice: 61408,
     marketCapRank: 1,
-    marketCap: 1141731099010,
-    fullyDilutedValuation: 1285385611303,
+    marketCap: 1141731099010.0,
+    fullyDilutedValuation: 1285385611303.0,
     totalVolume: 67190952980,
     high24H: 61712,
     low24H: 56220,

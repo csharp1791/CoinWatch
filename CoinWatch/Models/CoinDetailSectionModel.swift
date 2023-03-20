@@ -8,7 +8,6 @@
 import Foundation
 
 struct CoinDetailSectionModel {
-  
   let title: String
   let stats: [StatisticModel]
 }
