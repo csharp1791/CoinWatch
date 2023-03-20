@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Kingfisher
 
 struct CoinRowView: View {
   
@@ -19,14 +18,28 @@ struct CoinRowView: View {
           .font(.caption)
           .foregroundColor(.gray)
           .padding(.trailing, 2)
-        
-        // image
-        KFImage(URL(string: coin.image))
-          .resizable()
-          .scaledToFit()
-          .frame(width: 32, height: 32)
-          .padding(.leading, 4)
-       
+  
+        // convert URL to images for market cap rank section
+        AsyncImage(url: URL(string: coin.image)) { phase in
+          switch phase {
+          case .empty:
+            Color.purple.opacity(0.1)
+          case .success(let image):
+            image
+              .resizable()
+              .scaledToFit()
+              .cornerRadius(8)
+          case .failure(_):
+            Image(systemName: "icloud.slash")
+              .resizable()
+              .scaledToFit()
+          @unknown default:
+            Image(systemName: "exclamationmark.icloud")
+          }
+        }
+        .frame(width: 32, height: 32)
+        .cornerRadius(20)
+   
         // coin name info
         VStack(alignment: .leading, spacing: 4) {
           Text(coin.name)

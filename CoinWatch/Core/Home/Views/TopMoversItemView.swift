@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Kingfisher
 
 struct TopMoversItemView: View {
   
@@ -14,14 +13,28 @@ struct TopMoversItemView: View {
   
   var body: some View {
     VStack(alignment: .leading) {
-      // image
       
-      KFImage(URL(string: coin.image))
-        .resizable()
-        .scaledToFit()
-        .frame(width: 32, height: 32)
-        .padding(.leading, 0)
-
+      // convert URL to images for coin list section
+     AsyncImage(url: URL(string: coin.image)) { phase in
+        switch phase {
+        case .empty:
+          Color.purple.opacity(0.1)
+        case .success(let image):
+          image
+            .resizable()
+            .scaledToFit()
+            .cornerRadius(8)
+        case .failure(_):
+          Image(systemName: "icloud.slash")
+            .resizable()
+            .scaledToFit()
+        @unknown default:
+          Image(systemName: "exclamationmark.icloud")
+        }
+      }
+      .frame(width: 32, height: 32)
+      .cornerRadius(20)
+        
       // coin info
       HStack(spacing: 2) {
         Text(coin.symbol.uppercased())
