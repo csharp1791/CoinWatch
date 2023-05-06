@@ -47,10 +47,12 @@ class HomeViewModel: ObservableObject {
         
         
       } catch let error {
-        print("DEBUG failed to decode \(error)")
-        self.isLoadingData = false
+          DispatchQueue.main.async {
+              print("DEBUG failed to decode \(error)")
+              self.isLoadingData = false
+          }
       }
-     
+        
     }.resume()
   }
   
